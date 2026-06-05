@@ -33,8 +33,10 @@ const issAPI =  async () => {
 
         const positionISS = await issData.json();
         console.log(positionISS);
-        const latitude = issData.iss_position.latitude;
+        const latitude = positionISS.iss_position.latitude;
         console.log(latitude);
+        const longitude = positionISS.iss_position.longitude;
+        console.log(longitude);
         map.innerHTML = positionISS.longitude;
     } catch (error) {
         console.error("Erreur lors de l'appel à l'API : ", error);
